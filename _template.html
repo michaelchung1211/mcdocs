@@ -1,36 +1,31 @@
 <!--
-  HOW TO ADD A NEW TOPIC PAGE
-  ===========================
-  1. Copy this file to docs/<slug>.html  (e.g. docs/claims.html)
+  HOW TO ADD A NEW PAGE
+  =====================
+  1. Copy this file to pages/<slug>.html  (e.g. pages/claims.html)
   2. Edit <title>, eyebrow, h1, lead, and content.
-  3. Add an entry to docs/manifest.json under "topics":
-       {
-         "slug":    "claims",
-         "title":   "領地系統",
-         "summary": "保護你的建築不被其他玩家修改。",
-         "path":    "claims.html",
-         "updated": "2026-06-04"
-       }
-  4. Commit, push. GitHub Pages picks it up; the home page lists it automatically.
+     - <title> drives the homepage list. You can also add
+       <meta name="docs-title" content="..."> to override.
+     - <meta name="description"> appears as the subtitle on the home list.
+  3. Commit, push. The homepage auto-discovers it — no other edits needed.
 
-  Keep new pages at the top level of docs/. If you nest into a folder, you'll
-  need to adjust the asset paths (./assets/... → ../assets/...).
+  Files starting with "_" (like this one) are ignored by the home list.
 -->
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>新頁面標題 · MC Docs</title>
+  <title>新頁面標題</title>
+  <meta name="description" content="一句話說明這個系統。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
 
   <nav class="page-nav">
-    <a href="./index.html">← 回首頁</a>
+    <a href="../index.html">← 回首頁</a>
   </nav>
 
   <main class="container">
@@ -38,11 +33,10 @@
       <div class="section-marker">Topic · 主題</div>
       <h1>頁面標題</h1>
       <p class="lead">用一句話說明這個系統解決什麼問題。</p>
-      <div class="meta">Updated · 2026-06-04</div>
     </header>
 
     <section>
-      <div class="section-marker">01 · The Basics · 基本概念</div>
+      <div class="section-marker">The Basics · 基本概念</div>
       <h2>基本概念</h2>
       <p>正文段落。這裡解釋這個系統是什麼、為什麼存在、最常見的使用情境。</p>
 
@@ -53,7 +47,7 @@
     </section>
 
     <section>
-      <div class="section-marker">02 · Commands · 指令</div>
+      <div class="section-marker">Commands · 指令</div>
       <h2>常用指令</h2>
 
       <div class="cmd-group-title">玩家指令 · Player Commands</div>
@@ -70,7 +64,7 @@
     </section>
 
     <section>
-      <div class="section-marker">03 · FAQ · 常見問題</div>
+      <div class="section-marker">FAQ · 常見問題</div>
       <h2>常見問題</h2>
 
       <details>
@@ -86,7 +80,7 @@
 
   <footer class="site-footer">
     <div class="ornament">⁂</div>
-    <div><a href="./index.html">回首頁</a></div>
+    <div><a href="../index.html">回首頁</a></div>
   </footer>
 </body>
 </html>
