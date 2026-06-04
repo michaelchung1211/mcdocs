@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>歡迎與快速開始 · MC Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+
+  <nav class="page-nav">
+    <a href="./index.html">← 回首頁</a>
+  </nav>
+
+  <main class="container">
+    <header class="page-header">
+      <div class="section-marker">Welcome · 開始之前</div>
+      <h1>歡迎與快速開始</h1>
+      <p class="lead">這是一份慢慢長大的伺服器說明書。這一頁告訴你這個站怎麼運作，以及怎麼新增一篇。</p>
+      <div class="meta">Updated · 2026-06-04</div>
+    </header>
+
+    <section>
+      <div class="section-marker">01 · How It Works · 站台架構</div>
+      <h2>這個站怎麼運作</h2>
+      <p>整個站只是 <code>docs/</code> 資料夾裡的一堆靜態 HTML 檔。GitHub Pages 直接服務這個資料夾，沒有打包、沒有後端。</p>
+
+      <ul>
+        <li>首頁 <code>index.html</code> 讀取 <code>manifest.json</code>，把每一篇主題列出來。</li>
+        <li>每一篇主題是一個 <code>.html</code> 檔，放在 <code>docs/</code> 最上層。</li>
+        <li>共用的樣式在 <code>assets/style.css</code>，字體從 Google Fonts 載入。</li>
+      </ul>
+
+      <div class="callout callout-info">
+        <div class="callout-label">Note · 補充</div>
+        <p>路徑都用相對路徑（<code>./assets/...</code>），所以無論 GitHub Pages 的網址前綴是什麼，連結都會正確。</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-marker">02 · Add a Page · 新增一篇</div>
+      <h2>新增一篇主題</h2>
+      <p class="lead">三個步驟：複製範本、填內容、登錄到 manifest。</p>
+
+      <div class="step">
+        <div class="step-num">i</div>
+        <div>
+          <h4>複製範本</h4>
+          <p>把 <code>_template.html</code> 複製成 <code>&lt;slug&gt;.html</code>，例如 <code>claims.html</code>。slug 用英文小寫，不要有空白。</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">ii</div>
+        <div>
+          <h4>填入內容</h4>
+          <p>編輯 <code>&lt;title&gt;</code>、eyebrow、<code>&lt;h1&gt;</code>、lead 段落和各個 section。範本裡已經放好常用元件（callout、step、指令清單、FAQ）。</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">iii</div>
+        <div>
+          <h4>登錄到 manifest.json</h4>
+          <p>打開 <code>manifest.json</code>，在 <code>topics</code> 陣列加一筆：</p>
+<pre><code>{
+  "slug":    "claims",
+  "title":   "領地系統",
+  "summary": "保護你的建築不被其他玩家修改。",
+  "path":    "claims.html",
+  "updated": "2026-06-04"
+}</code></pre>
+          <p>Commit、push，首頁下次重新整理就會列出來。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-marker">03 · Components · 可用元件</div>
+      <h2>可用元件</h2>
+      <p>範本裡用到的元件，這裡列出來方便對照。</p>
+
+      <h3>標註框 Callout</h3>
+      <div class="callout callout-tip">
+        <div class="callout-label">Tip · 小技巧</div>
+        <p>三種顏色：<code>callout-tip</code>（森林綠）、<code>callout-info</code>（霧藍）、<code>callout-warn</code>（赤土）。</p>
+      </div>
+      <div class="callout callout-warn">
+        <div class="callout-label">Warning · 注意</div>
+        <p>用於重要警告，例如不可逆的操作。</p>
+      </div>
+
+      <h3>指令清單 Command List</h3>
+      <div class="cmd-group-title">範例 · Example</div>
+      <div class="cmd-list">
+        <div class="cmd-item">
+          <code>/spawn</code>
+          <div>傳送到出生點。</div>
+        </div>
+        <div class="cmd-item">
+          <code>/home</code>
+          <div>傳送到你設定的家。</div>
+        </div>
+      </div>
+
+      <h3>程式區塊 Code Block</h3>
+      <pre><code>server.properties:
+  max-players=20
+  view-distance=20</code></pre>
+
+      <h3>表格 Table</h3>
+      <table class="compare-table">
+        <thead>
+          <tr><th>欄位</th><th>說明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>slug</td><td>頁面英文代號，會變成檔名</td></tr>
+          <tr><td>title</td><td>顯示在首頁清單上的標題</td></tr>
+          <tr><td>summary</td><td>標題下方的一句話</td></tr>
+        </tbody>
+      </table>
+
+      <h3>FAQ 摺疊區 Details</h3>
+      <details>
+        <summary>怎麼刪除這一頁？</summary>
+        <p>刪掉 <code>welcome.html</code> 並把 <code>manifest.json</code> 裡這一筆移除即可。</p>
+      </details>
+      <details>
+        <summary>樣式要改怎麼辦？</summary>
+        <p>改 <code>docs/assets/style.css</code>。色票和元件規格寫在 <code>docs/style.md</code>。</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="ornament">⁂</div>
+    <div><a href="./index.html">回首頁</a></div>
+  </footer>
+</body>
+</html>

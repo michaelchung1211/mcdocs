@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft Server Docs · 伺服器手冊</title>
+  <meta name="description" content="私人生存伺服器的外掛、指令與規則說明。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+
+  <header class="hero container">
+    <div class="hero-eyebrow">A Server's Field Guide · 玩家指南</div>
+    <h1 class="hero-title">伺服器手冊</h1>
+    <p class="hero-subtitle">私人生存伺服器的外掛、指令與規則。一份慢慢長大的說明書。</p>
+    <div class="hero-divider">❦</div>
+  </header>
+
+  <main class="container">
+
+    <section id="topics">
+      <div class="section-marker">01 · Topics · 系統說明</div>
+      <h2>系統與外掛</h2>
+      <p class="lead">每一個外掛或系統都有專屬的說明頁。從常用指令到細節提醒，都寫在一起。</p>
+
+      <nav class="toc" aria-label="說明文件清單">
+        <ol id="topics-list">
+          <li><span class="toc-empty">載入中⋯</span></li>
+        </ol>
+      </nav>
+    </section>
+
+    <section id="about">
+      <div class="section-marker">02 · About · 關於</div>
+      <h2>關於這個站</h2>
+      <p>這份手冊由 GitHub Pages 直接服務 <code>docs/</code> 資料夾的靜態檔案，沒有打包步驟。每一個主題就是 <code>docs/</code> 底下的一個 <code>.html</code> 檔。</p>
+
+      <div class="callout callout-tip">
+        <div class="callout-label">Tip · 新增一篇</div>
+        <p>複製 <code>_template.html</code> 為新檔案，編輯內容，然後在 <code>manifest.json</code> 的 <code>topics</code> 加入一筆資料即可。下次 push 後首頁會自動列出。</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="ornament">⁂</div>
+    <div>Purpur 26.1.2 · Survival</div>
+  </footer>
+
+  <script src="./assets/home.js"></script>
+</body>
+</html>

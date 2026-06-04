@@ -1,0 +1,92 @@
+<!--
+  HOW TO ADD A NEW TOPIC PAGE
+  ===========================
+  1. Copy this file to docs/<slug>.html  (e.g. docs/claims.html)
+  2. Edit <title>, eyebrow, h1, lead, and content.
+  3. Add an entry to docs/manifest.json under "topics":
+       {
+         "slug":    "claims",
+         "title":   "領地系統",
+         "summary": "保護你的建築不被其他玩家修改。",
+         "path":    "claims.html",
+         "updated": "2026-06-04"
+       }
+  4. Commit, push. GitHub Pages picks it up; the home page lists it automatically.
+
+  Keep new pages at the top level of docs/. If you nest into a folder, you'll
+  need to adjust the asset paths (./assets/... → ../assets/...).
+-->
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新頁面標題 · MC Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+
+  <nav class="page-nav">
+    <a href="./index.html">← 回首頁</a>
+  </nav>
+
+  <main class="container">
+    <header class="page-header">
+      <div class="section-marker">Topic · 主題</div>
+      <h1>頁面標題</h1>
+      <p class="lead">用一句話說明這個系統解決什麼問題。</p>
+      <div class="meta">Updated · 2026-06-04</div>
+    </header>
+
+    <section>
+      <div class="section-marker">01 · The Basics · 基本概念</div>
+      <h2>基本概念</h2>
+      <p>正文段落。這裡解釋這個系統是什麼、為什麼存在、最常見的使用情境。</p>
+
+      <div class="callout callout-tip">
+        <div class="callout-label">Tip · 小技巧</div>
+        <p>補充提示。例如：第一次使用前，先看 <code>/example help</code>。</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-marker">02 · Commands · 指令</div>
+      <h2>常用指令</h2>
+
+      <div class="cmd-group-title">玩家指令 · Player Commands</div>
+      <div class="cmd-list">
+        <div class="cmd-item">
+          <code>/example</code>
+          <div>說明這個指令做什麼。</div>
+        </div>
+        <div class="cmd-item">
+          <code>/example status</code>
+          <div>查看目前狀態。</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-marker">03 · FAQ · 常見問題</div>
+      <h2>常見問題</h2>
+
+      <details>
+        <summary>我要怎麼開始？</summary>
+        <p>回答放在這裡。</p>
+      </details>
+      <details>
+        <summary>遇到錯誤訊息怎麼辦？</summary>
+        <p>回答放在這裡。</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="ornament">⁂</div>
+    <div><a href="./index.html">回首頁</a></div>
+  </footer>
+</body>
+</html>

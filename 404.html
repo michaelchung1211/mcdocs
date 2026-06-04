@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 · 找不到頁面</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Self-contained styles so 404 works under any GitHub Pages path prefix. -->
+  <style>
+    :root {
+      --paper:#f3ead5; --ink:#2a1f14; --ink-soft:#4a3a26; --ink-mute:#7a684e;
+      --forest:#2d5a3d; --terra:#a8472d; --gold:#b8893a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Noto Sans TC", "Fraunces", serif;
+      color: var(--ink-soft);
+      background: var(--paper);
+      background-image:
+        radial-gradient(circle at 20% 10%, rgba(184,137,58,0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(45,90,61,0.06) 0%, transparent 50%);
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 28px;
+      text-align: center;
+    }
+    .wrap { max-width: 600px; }
+    .eyebrow {
+      font-family: "Fraunces", serif;
+      font-style: italic;
+      font-size: 14px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-family: "Noto Serif TC", "Fraunces", serif;
+      color: var(--ink);
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    .subtitle {
+      font-family: "Fraunces", "Noto Serif TC", serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 19px;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      margin-bottom: 32px;
+    }
+    .ornament {
+      font-family: "Fraunces", serif;
+      font-size: 24px;
+      color: var(--gold);
+      margin-bottom: 40px;
+    }
+    a {
+      font-family: "Fraunces", serif;
+      font-style: italic;
+      font-size: 14px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--forest);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    a:hover { color: var(--terra); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="eyebrow">404 · Not Found</div>
+    <h1>這一頁不存在</h1>
+    <p class="subtitle">可能連結過時了，或者頁面還沒有寫好。</p>
+    <div class="ornament">❦</div>
+    <!-- Compute the site root: strip everything from the last "/" onward. Works on GH Pages with any repo prefix. -->
+    <a id="home" href="./">← 回首頁</a>
+  </div>
+  <script>
+    // For GH Pages project sites, point home back to the repo root,
+    // not the (broken) URL the user landed on.
+    (function () {
+      var path = location.pathname;
+      // For "/repo/some/missing/page", root is "/repo/". For root site, "/".
+      var parts = path.split('/').filter(Boolean);
+      var root = parts.length > 0 && location.hostname.endsWith('.github.io')
+        ? '/' + parts[0] + '/'
+        : '/';
+      document.getElementById('home').setAttribute('href', root);
+    })();
+  </script>
+</body>
+</html>
